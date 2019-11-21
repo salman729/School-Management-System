@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Time Table List')
 @section('content')
 
@@ -20,15 +20,32 @@
                 <thead>
                   <tr>
                     <th>Period</th>
-	                <th>Subject</th>
-                  <th>Action</th>
-                   </tr>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Class Room</th>
+  	                <th>Subject</th>
+                    <th>Batch</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Attendence</th>
+                    <th>Action</th>
+                  </tr>
                  </thead>
                   <tbody>
 	                  @foreach($timeTables as $timeTable)
 						<tr>
               <td>{{$timeTable->periods->periodName}}</td>
+              <td>{{$timeTable->periods->times->time_name}}</td>
+              <td>{{$timeTable->periods->days->day_name}}</td>
+              <td>{{$timeTable->periods->classRooms->cRoom_name}}</td>
               <td>{{$timeTable->subjects->sub_name}}</td>
+              <td>{{$timeTable->batches->batchName}}</td>
+              <td>{{$timeTable->batches->classes->c_name}}</td>
+              <td>{{$timeTable->batches->sections->sec_name}}</td>
+
+              <td> {{--  <a href="{{ url('/timeTables')}}" type="button" class="btn btn-success btn-sm ">Mark</a> --}}
+                 <a href="{{ route("attendence",['id'=>$timeTable->id,'batch'=>$timeTable->batches->id]) }}" type="button" class="btn btn-success btn-sm">Mark </a>
+               </td> 
 							
 							<td>
                 <a href="{{ url('editTimeTable/'.$timeTable->id)}}">

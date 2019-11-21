@@ -25,4 +25,8 @@ class Batch extends Model
     {
     	return $this->hasMany('App\Employe','id','employe_id');
     }
+    public function classenroll()
+    {
+        return $this->hasMany('App\CEnrollment','batch_id','id')->where('is_active','yes');
+    }
 }

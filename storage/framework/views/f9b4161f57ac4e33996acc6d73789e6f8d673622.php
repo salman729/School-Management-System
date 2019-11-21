@@ -1,4 +1,3 @@
-s
 <?php $__env->startSection('title','Edit Enrollment'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="panel-body">
@@ -8,6 +7,7 @@ s
 
        
         <div class="col-lg-12">
+            <h3>Edit Class Enrollment</h3>
  
              
             <form class="form-group row" role="form" method="post" action="<?php echo e(url('updatecEnrollment')); ?>"            enctype="multipart/form-data">
@@ -31,7 +31,7 @@ s
                     <select custom class="form-control" name="batch_id" id="" required="required">
                         <option value="">Select One</option>
                         <?php $__currentLoopData = $batches; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $batch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($batch->id); ?>" <?php echo e(($batch->id == $cenrolls->batch_id) ? 'selected':''); ?>><?php echo e($batch->batchName); ?></option>
+                        <option value="<?php echo e($batch->id); ?>" <?php echo e(($batch->id == $cenrolls->batch_id) ? 'selected':''); ?>><?php echo e($batch->batchName); ?> / <?php echo e($batch->classes->c_name); ?> / <?php echo e($batch->sections->sec_name); ?> / <?php echo e($batch->years->yearName); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
@@ -88,7 +88,7 @@ s
     });
 </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.footer2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.sidebar2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.header2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

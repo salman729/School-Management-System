@@ -1,13 +1,14 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Edit Period')
 @section('content')
 <div class="panel-body">
 	@include('includes.alerts')
     <div class="row">
         <div class="col-lg-12">
+            <h3>Edit Period</h3>
             <form class="form-group row" role="form" method="post" action="{{url('updatePeriods')}}"  enctype="multipart/form-data">
 
                 <div class="col-md-4"> 
@@ -49,7 +50,7 @@
                     </div>
 
                    
-                    <button type="submit" class="btn btn-default">Submit Button</button>
+                    <button type="submit" class="btn btn-default">Update Button</button>
                     <button type="reset" class="btn btn-default">Reset Button</button>
                 </div>
             </form>

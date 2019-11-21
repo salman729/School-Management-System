@@ -17,6 +17,7 @@ class CreateTimeTablesTable extends Migration
             $table->increments('id');
             $table->string('period_id');
             $table->string('subject_id');
+            $table->string('batch_id');
             $table->timestamps();
         });
     }

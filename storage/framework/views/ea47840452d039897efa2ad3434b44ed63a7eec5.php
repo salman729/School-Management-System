@@ -19,6 +19,9 @@
                     <th>Guardian</th>
                     <th>DOB</th>
                     <th>Batch</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Year</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -30,6 +33,9 @@
                    <td><?php echo e($cenroll->gfirstName); ?></td>
                    <td><?php echo e($cenroll->dateBirth); ?></td>
                    <td><?php echo e($cenroll->batches->batchName); ?></td>
+                   <td><?php echo e($cenroll->batches->classes->c_name); ?></td>
+                   <td><?php echo e($cenroll->batches->sections->sec_name); ?></td>
+                   <td><?php echo e($cenroll->batches->years->yearName); ?></td>
                    <td><?php echo ($cenroll->is_active == 'yes')? '<span class="label label-primary">active</span>' :'<span class="label label-danger">unactive</span>'; ?></td>
                    
                    <td>
@@ -69,7 +75,7 @@
   </script>
 
   <?php $__env->stopSection(); ?>
-<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.footer2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.sidebar2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.header2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

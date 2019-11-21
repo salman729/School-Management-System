@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')s
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Registration Form')
 @section('content')
 <div class="panel-body">
@@ -11,6 +11,7 @@
 
         
         <div class="col-lg-12">
+            <h3>Add Registration</h3>
 
              
             <form class="form-group row" role="form" method="post" action="{{url('regStudents')}}"            enctype="multipart/form-data">

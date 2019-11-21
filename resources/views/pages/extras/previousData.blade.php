@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')s
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Previous Details')
 @section('content')
 <div class="panel-body">

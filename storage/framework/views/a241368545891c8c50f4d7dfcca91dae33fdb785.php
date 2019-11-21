@@ -1,4 +1,3 @@
-s
 <?php $__env->startSection('title','Admission Form'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="panel-body">
@@ -8,9 +7,9 @@ s
 
        
         <div class="col-lg-12">
-
+            <h3>Edit Admission</h3>
              
-            <form class="form-group row" role="form" method="post" action="<?php echo e(url('updateAdmission')); ?>"            enctype="multipart/form-data">
+            <form class="form-group row" role="form" method="post" action="<?php echo e(url('updateAdmission')); ?>"    enctype="multipart/form-data">
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Registration Id<span style="color: red" class="required">*</span></label>
@@ -40,6 +39,12 @@ s
                     <label>Roll Number</label>
                     <input name="rollnumber" value="<?php echo e($admission->rollnumber); ?>" class="form-control" placeholder="Enter Roll Number" required="required">
                 </div>
+                
+                
+            </div>
+
+            <div class="col-md-4">
+
                 <div class="form-group">
                     <label>Category<span style="color: red" class="required">*</span></label>
                     <select custom class="form-control" name="category_id" required="required">
@@ -49,10 +54,6 @@ s
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
-                
-            </div>
-
-            <div class="col-md-4">
                 <div class="form-group"> 
                     <label>Blood Group </label>
                     <input name="bloodGroup" class="form-control" value="<?php echo e($admission->bloodGroup); ?>" placeholder="Enter Blood Group" >
@@ -68,16 +69,18 @@ s
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label>Religion<span style="color: red" class="required">*</span></label>
-                    <input name="religion" class="form-control" value="<?php echo e($admission->religion); ?>" placeholder="Enter Religion">
-                </div>
+                
                 <div class="form-group">
                     <label>Mother Tongue</label>
                     <input name="tongue" class="form-control" value="<?php echo e($admission->tongue); ?>" placeholder="Enter Mother Tongue">
                 </div>
             </div>
             <div class="col-md-4">
+
+                <div class="form-group">
+                    <label>Religion<span style="color: red" class="required">*</span></label>
+                    <input name="religion" class="form-control" value="<?php echo e($admission->religion); ?>" placeholder="Enter Religion">
+                </div>
 
                 <div class="form-group">
                     <label>Country</label>
@@ -136,7 +139,7 @@ s
     });
 </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.footer2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.sidebar2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.header2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

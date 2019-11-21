@@ -165,6 +165,25 @@
                             </ul>
                     </ul>
                     <!-- /.nav-second-level -->
+
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Examination <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('/examTime-list')}}">Exam Timings</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                
+                                
+                            </ul>
+                    </ul>
+                    <!-- /.nav-second-level -->
                 
         </div>
     </div>

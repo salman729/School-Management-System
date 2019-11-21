@@ -7,7 +7,7 @@
      
        
             <!-- /.panel-heading -->
-        
+        <div class="panel panel-default">
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>First Name:</strong>
@@ -113,7 +113,7 @@
             </div>
             <div class="form-group">
                 <strong>Category:</strong>
-               <strong><?php echo e($category->cat_name); ?></strong>
+               <strong></strong>
             </div>
             <div class="form-group">
                 <strong>Blood Group:</strong>
@@ -144,6 +144,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
           <button class="btn btn-primary"   id="mycustomprint">print</button>
         </div>
+
+    </div>
         <!-- /.panel -->
  <!--    </div> -->
     <!-- /.col-lg-12 -->
@@ -170,7 +172,7 @@
 </script>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.footer2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.sidebar2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.header2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

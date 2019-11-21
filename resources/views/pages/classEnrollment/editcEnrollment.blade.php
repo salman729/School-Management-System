@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')s
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Edit Enrollment')
 @section('content')
 <div class="panel-body">
@@ -11,6 +11,7 @@
 
        
         <div class="col-lg-12">
+            <h3>Edit Class Enrollment</h3>
  
              
             <form class="form-group row" role="form" method="post" action="{{url('updatecEnrollment')}}"            enctype="multipart/form-data">
@@ -34,7 +35,7 @@
                     <select custom class="form-control" name="batch_id" id="" required="required">
                         <option value="">Select One</option>
                         @foreach($batches as $batch)
-                        <option value="{{$batch->id}}" {{ ($batch->id == $cenrolls->batch_id) ? 'selected':'' }}>{{$batch->batchName}}</option>
+                        <option value="{{$batch->id}}" {{ ($batch->id == $cenrolls->batch_id) ? 'selected':'' }}>{{$batch->batchName}} / {{ $batch->classes->c_name }} / {{ $batch->sections->sec_name }} / {{ $batch->years->yearName }}</option>
                         @endforeach
                     </select>
                 </div>

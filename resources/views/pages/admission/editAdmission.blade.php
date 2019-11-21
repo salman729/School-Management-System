@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')s
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Admission Form')
 @section('content')
 <div class="panel-body">
@@ -11,7 +11,7 @@
 
        
         <div class="col-lg-12">
-
+            <h3>Edit Admission</h3>
              
             <form class="form-group row" role="form" method="post" action="{{url('updateAdmission')}}"    enctype="multipart/form-data">
             <div class="col-md-4">
@@ -43,6 +43,12 @@
                     <label>Roll Number</label>
                     <input name="rollnumber" value="{{$admission->rollnumber}}" class="form-control" placeholder="Enter Roll Number" required="required">
                 </div>
+                
+                
+            </div>
+
+            <div class="col-md-4">
+
                 <div class="form-group">
                     <label>Category<span style="color: red" class="required">*</span></label>
                     <select custom class="form-control" name="category_id" required="required">
@@ -52,10 +58,6 @@
                         @endforeach
                     </select>
                 </div>
-                
-            </div>
-
-            <div class="col-md-4">
                 <div class="form-group"> 
                     <label>Blood Group </label>
                     <input name="bloodGroup" class="form-control" value="{{$admission->bloodGroup}}" placeholder="Enter Blood Group" >
@@ -71,16 +73,18 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label>Religion<span style="color: red" class="required">*</span></label>
-                    <input name="religion" class="form-control" value="{{$admission->religion}}" placeholder="Enter Religion">
-                </div>
+                
                 <div class="form-group">
                     <label>Mother Tongue</label>
                     <input name="tongue" class="form-control" value="{{$admission->tongue}}" placeholder="Enter Mother Tongue">
                 </div>
             </div>
             <div class="col-md-4">
+
+                <div class="form-group">
+                    <label>Religion<span style="color: red" class="required">*</span></label>
+                    <input name="religion" class="form-control" value="{{$admission->religion}}" placeholder="Enter Religion">
+                </div>
 
                 <div class="form-group">
                     <label>Country</label>

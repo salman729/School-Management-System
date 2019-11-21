@@ -137,7 +137,7 @@ Route::get('/editTime/{id}','TimeController@edit');
 Route::post('updateTime','TimeController@update');
 Route::get('delTime/{id}','TimeController@destroy');
 		
-		// time routes
+		// ClassRoom routes
 
 Route::get('/classRooms','ClassRoomsController@create');
 Route::post('/addClassRoom','ClassRoomsController@store');
@@ -146,13 +146,79 @@ Route::get('/editClassRooms/{id}','ClassRoomsController@edit');
 Route::post('updateClassRooms','ClassRoomsController@update');
 Route::get('delClassRoom/{id}','ClassRoomsController@destroy');
 
-//batches
+//periods routes
 Route::get('/periods','PeriodsController@create');
 Route::get('periods-list','PeriodsController@index');
 Route::post('/addPeriods','PeriodsController@store');
 Route::get('editPeriods/{id}','PeriodsController@edit');
 Route::post('updatePeriods','PeriodsController@update');
 Route::get('delPeriods/{id}','PeriodsController@destroy');
+
+//TimeTable routes
+Route::get('/timeTables','TimeTablesController@create');
+Route::get('timeTable-list','TimeTablesController@index');
+Route::post('/addTimeTable','TimeTablesController@store');
+Route::get('editTimeTable/{id}','TimeTablesController@edit');
+Route::post('updateTimeTable','TimeTablesController@update');
+Route::get('delTimeTable/{id}','TimeTablesController@destroy');
+Route::get('attendence/{id}','TimeTablesController@attendence')->name('attendence');
+// Route::get('markattendence/{addmission_id}/{timeTable_id}','TimeTablesController@markattendence')->name('markattendence');
+// Route::post('markAttendence','TimeTablesController@markattendence');
+
+		// ExamTime routes
+
+Route::get('/examTime','ExamTimeController@create');
+Route::post('/addExamTime','ExamTimeController@store');
+Route::get('examTime-list','ExamTimeController@index');
+Route::get('/editExamTime/{id}','ExamTimeController@edit');
+Route::post('updateExamTime','ExamTimeController@update');
+Route::get('delExamTime/{id}','ExamTimeController@destroy');
+		
+				// ExamTerm routes
+
+Route::get('/examTerm','ExamTermController@create');
+Route::post('/addExamTerm','ExamTermController@store');
+Route::get('examTerm-list','ExamTermController@index');
+Route::get('/editExamTerm/{id}','ExamTermController@edit');
+Route::post('updateExamTerm','ExamTermController@update');
+Route::get('delExamTerm/{id}','ExamTermController@destroy');
+		
+				// ExamSlot routes
+
+Route::get('/examSlot','ExamSlotController@create');
+Route::post('/addExamSlot','ExamSlotController@store');
+Route::get('examSlot-list','ExamSlotController@index');
+Route::get('/editExamSlot/{id}','ExamSlotController@edit');
+Route::post('updateExamSlot','ExamSlotController@update');
+Route::get('delExamSlot/{id}','ExamSlotController@destroy');
+
+			// ExamSchedule routes
+
+Route::get('/examSchedule','ExamScheduleController@create');
+Route::post('/addExamSchedule','ExamScheduleController@store');
+Route::get('examSchedule-list','ExamScheduleController@index');
+Route::get('/editExamSchedule/{id}','ExamScheduleController@edit');
+Route::post('updateExamSchedule','ExamScheduleController@update');
+Route::get('delExamSchedule/{id}','ExamScheduleController@destroy');
+		
+		// grades routes
+
+Route::get('/grades','GradesController@create');
+Route::post('/addGrades','GradesController@store');
+Route::get('grades-list','GradesController@index');
+Route::get('/editGrades/{id}','GradesController@edit');
+Route::post('updateGrades','GradesController@update');
+Route::get('delGrades/{id}','GradesController@destroy');
+
+
+Route::post('markAttendence','AttendenceController@markattendence');
+//Attendence routes
+// Route::get('/attendence','AttendenceController@create');
+// Route::get('attendence-list','AttendenceController@index');
+// Route::post('/addAttendence','AttendenceController@store');
+// Route::get('editAttendence/{id}','AttendenceController@edit');
+// Route::post('updateAttendence','AttendenceController@update');
+// Route::get('delAttendence/{id}','AttendenceController@destroy');
 	//charges routes
 // Route::get('/charges','HomeController@charges');
 // Route::get('/charges-list','HomeController@chargeList');

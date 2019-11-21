@@ -1,5 +1,4 @@
-s
-<?php $__env->startSection('title','Registration Form'); ?>
+<?php $__env->startSection('title','Edit Registration Form'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="panel-body">
     <?php echo $__env->make('includes.alerts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -8,6 +7,7 @@ s
 
        
         <div class="col-lg-12">
+            <h3>Edit Registration</h3>
 
              
             <form class="form-group row" role="form" method="post" action="<?php echo e(url('updateRegistration')); ?>"            enctype="multipart/form-data">
@@ -140,7 +140,7 @@ s
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.footer2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.sidebar2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('includes.header2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

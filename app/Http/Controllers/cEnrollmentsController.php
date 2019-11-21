@@ -7,6 +7,9 @@ use App\Admission;
 use App\Batch;
 use App\CEnrollment;
 use App\Registration;
+use App\MClass;
+use App\Section;
+use App\Year;
 class cEnrollmentsController extends Controller
 {
     /**
@@ -16,7 +19,7 @@ class cEnrollmentsController extends Controller
      */
     public function index()
     {
-        $cenrolls = CEnrollment::with('admissions.registrations','batches')->get();
+        $cenrolls = CEnrollment::with('admissions.registrations','batches.classes','batches.sections','batches.years')->get();
          // dd($cenrolls);
     return view('pages.classEnrollment.classEnrollment-list',compact('cenrolls'));
     }

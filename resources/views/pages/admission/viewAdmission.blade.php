@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Student Details ')
 @section('content')
 
@@ -11,7 +11,7 @@
      
        
             <!-- /.panel-heading -->
-        
+        <div class="panel panel-default">
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>First Name:</strong>
@@ -117,7 +117,7 @@
             </div>
             <div class="form-group">
                 <strong>Category:</strong>
-               <strong>{{ $category->cat_name }}</strong>
+               <strong>{{-- {{ $category->cat_name }} --}}</strong>
             </div>
             <div class="form-group">
                 <strong>Blood Group:</strong>
@@ -148,6 +148,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
           <button class="btn btn-primary"   id="mycustomprint">print</button>
         </div>
+
+    </div>
         <!-- /.panel -->
  <!--    </div> -->
     <!-- /.col-lg-12 -->

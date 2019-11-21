@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')s
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Admission Form')
 @section('content')
 <h3>Fields Marked with <span style="color: red" class="required">*</span> Must Be Filled.</h3>

@@ -1,7 +1,7 @@
-@extends('layouts.index')
-@extends('includes.header')
-@extends('includes.sidebar')
-@extends('includes.footer')
+@extends('layouts.app2')
+@extends('includes.header2')
+@extends('includes.sidebar2')
+@extends('includes.footer2')
 @section('title','Class Enrollments')
 @section('content')
 
@@ -23,6 +23,9 @@
                     <th>Guardian</th>
                     <th>DOB</th>
                     <th>Batch</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Year</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -34,6 +37,9 @@
                    <td>{{ $cenroll->gfirstName }}</td>
                    <td>{{ $cenroll->dateBirth }}</td>
                    <td>{{$cenroll->batches->batchName}}</td>
+                   <td>{{$cenroll->batches->classes->c_name}}</td>
+                   <td>{{$cenroll->batches->sections->sec_name}}</td>
+                   <td>{{$cenroll->batches->years->yearName}}</td>
                    <td>{!!($cenroll->is_active == 'yes')? '<span class="label label-primary">active</span>' :'<span class="label label-danger">unactive</span>'!!}</td>
                    
                    <td>
