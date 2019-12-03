@@ -124,7 +124,7 @@ class TimeTablesController extends Controller
         }
     }
 
-    public function attendence(Request $request,$id)
+    public function attendence(Request $request,$id,$period_id)
     {
        $data = TimeTable::with('batches.classenroll.admissions.registrations','batches.sections','subjects','periods.times','periods.days')->where('id',$request->id)->first();
 

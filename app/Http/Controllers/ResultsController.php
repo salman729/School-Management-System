@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Admission;
-use App\TimeTable;
-use App\Attendence;
 
-class AttendenceController extends Controller
+class ResultsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,11 +23,7 @@ class AttendenceController extends Controller
      */
     public function create()
     {
-         $admissions = Admission::all();
-        // $timeTables = TimeTable::all();
-         $timeTables = TimeTable::with('periods.times','periods.days','periods.classRooms','subjects','batches.classes','batches.sections','batches.years')->get();
-         // dd($timeTables);
-         return view('pages.attendence.attendence',compact('admissions','timeTables'));
+        //
     }
 
     /**
@@ -87,32 +80,5 @@ class AttendenceController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-
-  
-    public function   markattendence(Request $request)
-    {
-$check=Attendence::where('attendenceDate',$request->attenDenceDate)->where('peroid_id',$request->peroid_Id)->get();
-$count=count($check);
-if ($count>1) {
-  return json_encode(['status'=>'yes']);
-}else{
-
-foreach ($request->mydata as  $key => $value) {
-        $insert=Attendence::create([
-            'admission_id'=>$value['addmission_id'],
-            'timeTable_id'=>$value['timeTable_id'],
-            'is_active'=>$value['attendence'],
-            'attendenceDate'=>$value['attendenceDate'],
-            'lec_type'=>$value['lec_type'],
-            'peroid_id'=>$value['peroid_id']
-             
-         ]); 
-    }
-return json_encode(['status'=>'no']);
-}      
-      
     }
 }

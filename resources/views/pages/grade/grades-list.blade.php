@@ -7,7 +7,7 @@
 
  <div class="row">
   @include('includes.alerts')
-   <div class="col-lg-8">
+   <div class="col-lg-12">
      <div class="panel panel-default">
        <div class="panel-heading">
                 Grades
@@ -19,8 +19,8 @@
              <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                   <tr>
-                    <th>Min Marks</th>
                     <th>Max Marks</th>
+                    <th>Min Marks</th>
                     <th>Grade</th>
 	                <th>Action</th>
                    </tr>
@@ -28,11 +28,11 @@
                   <tbody>
 	                  @foreach($grades as $grade)
 						<tr>
-							<td>{{$grade->min_marks}}</td>
               <td>{{$grade->max_marks}}</td>
+							<td>{{$grade->min_marks}}</td>
               <td>{{$grade->grade_name}}</td>
 
-              <td><a href="{{ url('editDays/'.$day->id)}}"><i class="fa fa-edit"></i></a> <a href="{{ url('delDays/'.$day->id)}}"><i class="fa fa-trash"></i></a>
+              <td><a href="{{ url('editGrades/'.$grade->id)}}"><i class="fa fa-edit"></i></a> <a href="{{ url('delGrades/'.$grade->id)}}"><i class="fa fa-trash"></i></a>
               </td>
 						</tr>
 	                  @endforeach

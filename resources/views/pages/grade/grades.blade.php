@@ -9,18 +9,21 @@
     <div class="row">
         <div class="col-lg-12">
             <h3>Add Grade</h3>
-            <form role="form" method="post" action="{{url('addGrade')}}">
+            <form role="form" method="post" action="{{url('addGrades')}}">
              {{ csrf_field() }}
 
-                <div class="col-md-4"> 
-                    <div class="form-group">
-                    <label>Min Marks<span style="color: red" class="required">*</span></label>
-                    <input name="min_marks" class="form-control" required="required" placeholder="Enter Minimum Marks">
-                    </div>
+                <div class="col-md-4">
+                    
                     <div class="form-group">
                     <label>Max Marks<span style="color: red" class="required">*</span></label>
                     <input name="max_marks" class="form-control" required="required" placeholder="Enter Maximum Marks">
                     </div>
+
+                    <div class="form-group">
+                    <label>Min Marks<span style="color: red" class="required">*</span></label>
+                    <input name="min_marks" class="form-control" required="required" placeholder="Enter Minimum Marks">
+                    </div>
+                    
                     <div class="form-group">
                     <label>Grade<span style="color: red" class="required">*</span></label>
                     <input name="grade_name" class="form-control" required="required" placeholder="Enter Grade">

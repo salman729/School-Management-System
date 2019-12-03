@@ -4,6 +4,7 @@
 	<?php echo $__env->make('includes.alerts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="row">
         <div class="col-lg-12">
+            <h3>Edit Exam Term</h3>
             <form role="form" method="POST" action="<?php echo e(url('updateExamTerm')); ?>">
                 <div class="col-md-4">
             

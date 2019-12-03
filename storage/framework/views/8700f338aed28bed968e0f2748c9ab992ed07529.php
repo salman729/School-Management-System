@@ -101,6 +101,9 @@
                        <li>
                            <a href="<?php echo e(url('/examSchedule-list')); ?>">Exam Schedule</a>
                        </li>
+                       <li>
+                           <a href="<?php echo e(url('/grades-list')); ?>">Grade</a>
+                       </li>
                        
                     </ul>
                   </li>

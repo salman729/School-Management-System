@@ -47,11 +47,10 @@
                     <input type="Date" name="attendenceDate" value="" class="form-control" required="required">
                 </div>
 
-                 <div class="form-group">
-                    <label>Lecture Type</label>
-                    <input name="lec_type" class="form-control" placeholder="Regular/Extra">
-                    <!-- <p class="help-block color-red" >{{$errors->first('lastName')}}</p>-->
-                </div>
+                <div class="form-group">
+                    <label>Lecture Type<span style="color: red" class="required">*</span></label>
+                    <input name="lec_type" class="form-control" required="required" placeholder="Regular / Extra">
+                    </div>
                 
             </div>
            

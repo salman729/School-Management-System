@@ -15,8 +15,16 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
+             <div class="alert alert-danger alert-dismissable" id="showhidealertdanger" style="display: none;">
+    <a href="#" class="close" data-dismiss="alert" aria-lable="close">×</a>
+    <strong>Danger</strong> Attendance Already Marked On this Date 
+  </div>
+    <div class="alert alert-success alert-dismissable" id="showhidealertsuccess" style="display: none;">
+    <a href="#" class="close" data-dismiss="alert" aria-lable="close">×</a>
+    <strong>Success</strong> Attendance Marked Successfully
+  </div>
              <div class="table-responsive">
-              
+              <input type="hidden" name="peroid_id" id="peroid_id" value="{{ Request::segment(3) }}">
                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                   <tr>
@@ -103,6 +111,8 @@ $(document).ready(function(){
  $('#submitAttendence').click(function(){
   var lec_type=$('#lec_type').val();
   var attendenceDate=$('#attendenceDate').val();
+   var peroid_id=$('#peroid_id').val();
+
   if(lec_type=='' || attendenceDate=='' ){
 alert("please fill the required filed");
   }else{
@@ -116,10 +126,10 @@ alert("please fill the required filed");
 
    var addmissionId = $(this).closest('tr').find('.addmission_id').val();
   var timeTableId = $(this).closest('tr').find('.timeTable_id').val();
- 
+
   var attendence=$(this).val();
  
-     mydata.push({addmission_id:addmissionId,attendence:'yes',timeTable_id:timeTableId,attendenceDate:attendenceDate,lec_type:lec_type});
+     mydata.push({addmission_id:addmissionId,attendence:'yes',timeTable_id:timeTableId,attendenceDate:attendenceDate,lec_type:lec_type,peroid_id:peroid_id});
     }else{
 
        var addmissionId = $(this).closest('tr').find('.addmission_id').val();
@@ -127,7 +137,7 @@ alert("please fill the required filed");
  
   var attendence=$(this).val();
  
-     mydata.push({addmission_id:addmissionId,attendence:'no',timeTable_id:timeTableId,attendenceDate:attendenceDate,lec_type:lec_type});
+     mydata.push({addmission_id:addmissionId,attendence:'no',timeTable_id:timeTableId,attendenceDate:attendenceDate,lec_type:lec_type,peroid_id:peroid_id});
     }
    });
 console.log(mydata);
@@ -135,9 +145,18 @@ console.log(mydata);
     url:"{{ url('/markAttendence') }}",
     type:"POST",
     dataType:'JSON',
-   data:{mydata:mydata,_token:"{{ csrf_token() }}"},
+   data:{mydata:mydata,peroid_Id:peroid_id,attenDenceDate:attendenceDate,_token:"{{ csrf_token() }}"},
     success:function(res){
-console.log(res);
+if (res.status=='yes') {
+
+$('#showhidealertdanger').show();
+$('#showhidealertsuccess').hide();
+}else{
+
+$('#showhidealertsuccess').show();
+$('#showhidealertdanger').hide();
+window.location.href ='{{url('timeTable-list')}}';
+}
     }
   });
 
